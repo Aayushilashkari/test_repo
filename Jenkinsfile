@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:AayushiLashkari/test_repo.git'
+                git branch: 'main', credentialsId: 'test_repo', url: 'git@github.com:AayushiLashkari/test_repo.git'
             }
         }
        
