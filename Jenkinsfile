@@ -15,16 +15,13 @@ pipeline {
    agent  any
         
     stages {
-        stage('checkout') {
-            steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "git@github.com:Aayushilashkari/test_repo.git"
-                        }
-                    }
-                }
+       stages {
+        stage('Git checkout') {
+           steps{
+                git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:AayushiLashkari/test_repo.git'
             }
+        }
+       }
 
         stage('Plan') {
             steps {
